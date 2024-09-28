@@ -9,7 +9,7 @@ export interface NoteCardProps {
 
 function NoteCard({noteTitle, noteBody, bgColor, textColor}: NoteCardProps) {
     return (
-        <View className={`rounded-xl px-4 py-5 min-w-[80%] bg-[${bgColor}] my-3`}>
+        <View className={`rounded-xl px-4 py-5 w-[80%] bg-[${bgColor}] my-3`}>
             <Text className="font-bold justify-start pb-2 text-[#F1E0C5] font-montserrat">{noteTitle}</Text>
 
             return <Text className={`text-[${textColor}] font-montserrat`}>{noteBody}</Text>
