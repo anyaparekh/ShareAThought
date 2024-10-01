@@ -1,9 +1,18 @@
-import { View, Text } from "react-native";
+import Button from "@/components/Button";
+import { Text, View } from "react-native";
 
 export default function Index() {
   return (
-    <View className="bg-[#F8F0E2] w-full h-full justify-center items-center">
-      <Text className="font-montserrat">Hello!</Text>
+    <View
+      style={{
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <Text>Edit app/index.tsx to edit this screen.</Text>
+      
+      <Button title={'Click Me'} />
     </View>
   );
 }
