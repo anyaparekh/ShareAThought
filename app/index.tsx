@@ -1,5 +1,4 @@
 import { View, Text } from "react-native";
-import TextInputField from "./textInputField";
 
 export default function Index() {
   return (
