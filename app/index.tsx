@@ -8,7 +8,6 @@ export default function Index() {
       <TextInputField
         title="Email Address"
         placeholder="Enter your Email Adress"
-        input="hello"
       />
     </View>
   );
