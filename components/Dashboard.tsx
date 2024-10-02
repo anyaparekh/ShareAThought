@@ -4,17 +4,6 @@ import { BASE_URL } from "@env";
 import React, { useState, useEffect } from 'react'; 
 import NoteCard from './NoteCard'; 
 
-    // [
-    //     {
-    //         title: 'First Note',
-    //         body: 'This is the first note'
-    //     },
-    //     {
-    //         title: 'Second Note',
-    //         body: 'This is the second note'
-    //     }
-    // ]
-
 interface Note {
     title: string;
     body: string;
@@ -50,15 +39,3 @@ function Dashboard() {
 }
 
 export default Dashboard; 
-
-
-    
-    // Passing configuration object to axios
-    // axios({
-    //     method: 'get',
-    //     url: `${BASE_URL}/api/notes`,
-    // }).then((response) => {
-    //     console.log(response.data);
-    // });
-
-    // Invoking the get method to perform a GET request
