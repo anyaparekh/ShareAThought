@@ -1,0 +1,41 @@
+import { View, Text } from "react-native";
+import axios from 'axios';
+import { BASE_URL } from "@env";
+import React, { useState, useEffect } from 'react'; 
+import NoteCard from './NoteCard'; 
+
+interface Note {
+    title: string;
+    body: string;
+}
+
+function Dashboard() {
+    const [notes, setNotes] = useState<Note[]>();
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(false);
+
+    useEffect(() => {
+        axios.get(`${BASE_URL}/Notes`).then((response) => {
+            setNotes(response.data);
+            console.log(response.data);
+            setIsLoading(false); 
+            setError(false);
+        }).catch(() => { setError(true) });
+    }, []); 
+
+    if(isLoading) {
+        return <Text>Loading...</Text>
+    }
+
+    var bgColor = ["bg-[#71816D]", "bg-[#F1E0C5]", "bg-[#7F715F]"];
+    var textColor = ["text-[#FFFFF]", "text-[#342A21]", "text-[#F1E0C5]"];
+    
+    return (
+        (!isLoading && !error && notes) ? 
+            (notes.map((note, index) => <NoteCard noteTitle={note.title} noteBody={note.body} bgColor={bgColor[index % 3]} textColor={textColor[index % 3]} />))
+            :
+            <Text>Dashboard!</Text>
+    ); 
+}
+
+export default Dashboard; 
